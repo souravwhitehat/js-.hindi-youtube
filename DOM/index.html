@@ -9,20 +9,48 @@
             background-color: black;
             color: white;
         }
-        .unl{
-            color:white;
-        }
+     
     </style>
 </head>
 <body>
-    <div >
-        <h1 id="firstheading">code with sourav</h1>
-        <p>Lorem ipsum dolor sit.</p>
+    <div class="parent">
+        <!-- hii budy -->
+         <!-- code injected by live server -->
+        <div class="day">sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tueseday</div>
+        <div class="day">Wednessday</div>
     </div>
-    <ul class="unl">
-        <li class="list-item">home</li>
-        <li class="list-item">about</li>
-        <li class="list-item">contact</li>
-    </ul>
+  
+
+
+    <script>
+       const parent = document.querySelector('.parent');
+       console.log(parent);
+       console.log(parent.children);
+    //    console.log(parent.children[1].innerHTML);//children is a method for parent class
+
+    //    for (let i = 0; i < parent.children.length; i++) {
+    //     const element = parent.children[i].innerHTML
+    //     console.log(element)
+    //    }//get element using for loop
+
+
+    //    parent.children[0].style.color='orange'
+
+    //    console.log(parent.firstElementChild.innerHTML);//get the 1st child element
+    //    console.log(parent.lastElementChild.innerHTML);get the last child element
+
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne.parentElement.innerHTML);//parentElement use for get the parent class of a child
+    // console.log(dayOne.nextElementSibling.innerHTML);//get the next element 
+
+    console.log(parent.childNodes);
+    
+
+    
+       
+       
+    </script>
 </body>
 </html>
