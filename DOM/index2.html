@@ -7,5 +7,25 @@
 </head>
 <body style="background-color: black; color: white;">
     
+
+
+
+    <script>
+        const div = document.createElement('div')
+      
+        div.className="1stdiv"
+        div.id = 'newid'
+        div.setAttribute("title", "generated title")
+        div.style.backgroundColor = 'red'
+        div.style.color='white'
+        // div.innerHTML='code with sourav'
+
+       const addText=  document.createTextNode("chai with code")
+       div.appendChild(addText)
+
+          console.log(div);
+document.body.appendChild(div)
+        
+    </script>
 </body>
 </html>
