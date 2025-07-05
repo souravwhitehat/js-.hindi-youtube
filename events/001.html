@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events Practice</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="Photoshop">
+                <input type="button" value="Delete" title="delete" class="delete-btn">
+            </li>
+            <li>
+                <img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="Japan">
+                <input type="button" value="Delete" title="delete" class="delete-btn">
+            </li>
+            <li>
+                <img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="River">
+                <input type="button" value="Delete" title="delete" class="delete-btn">
+            </li>
+            <li>
+                <img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="Owl">
+                <input type="button" value="Delete" title="delete" class="delete-btn">
+            </li>
+            <li>
+                <img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="Prayer">
+                <input type="button" value="Delete" title="delete" class="delete-btn">
+            </li>
+            <li>
+                <a style="color: aliceblue;" href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    //     //display alt 
+    //     const image = document.querySelector('#images')
+    //     image.addEventListener('click' , (e)=>{
+    //         console.log(e.target.alt)
+    //     })
+    // // On clicking “Google” link
+    //     document.getElementById('google').addEventListener('click' , (e)=>{
+    //         e.stopPropagation();
+    //         e.preventDefault()
+    //         alert("we cant perform your request")
+    //     },true)
+
+    // Change background of image’s <li> on hover
+
+    const allimg = document.querySelectorAll('#images img')
+    // console.log(allimg)
+    // allimg.forEach((img)=>{
+    //     img.addEventListener('mouseover', (e)=>{
+    //         const allli= (e.target.parentNode)
+    //         allli.style.backgroundColor = "red";
+
+    //     })
+    //     img.addEventListener('mouseout', (e)=>{
+    //         const afterhover = (e.target.parentNode)
+    //         afterhover.style.backgroundColor=''
+    //     })
+    // })
+
+    // 6. Log which mouse button was clicked
+    // document.querySelector('#images').addEventListener('mousedown',(e)=>{
+    //     const click=(e.button)
+    //     if(click===0){
+    //         console.log('left click');
+
+    //     }else if(click===1){
+    //         console.log("middle click");
+
+    //     }
+    //     else{
+    //         console.log("right click");
+
+    //     }
+    // })
+
+    // 7. Use currentTarget vs target
+
+    //  document.querySelector('#images').addEventListener('click',(e)=>{
+    //     console.log("Target:", e.target)//it refers where i click if i click in image then target eill be img and current target will be the top most parent which is ul...in other case if i clicked in li then target will be li anf current target will be ul
+    // console.log("CurrentTarget:", e.currentTarget)
+    //  })
+
+
+    //Stop propagation only on Owl image
+    // document.querySelector('#owl').addEventListener('click',  (e)=>{
+    //     e.stopPropagation()
+    //     console.log('u clicked on an owl');
+
+    // })
+
+    // const allImage = document.querySelectorAll('#images')
+//    allimg.forEach((img) => {
+//     img.addEventListener('click', (e) => {
+//         const size = e.target;
+//         size.style.height = '100px';
+//         size.style.width = '200px';
+//     });
+// });
+
+document.querySelector('#images').addEventListener('click', (event)=>{
+    if(event.target.classList.contains('delete-btn')){
+        const del = event.target.parentNode
+        del.remove();
+    }
+    const remaining = document.querySelectorAll('#images img').length
+    console.log(`remaing photos ${remaining}`)
+})
+</script>
+
+
+</html>
