@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        const button = document.querySelector('#btn')
+        const list = document.querySelector('#list')
+        button.addEventListener('click',(e)=>{
+            // li.textContent=''
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then((res=>res.json()))
+            .then(data=>{
+                data.forEach((user) => {
+                    let li = document.createElement('li')
+                    li.textContent=user.website;
+                    list.appendChild(li)
+                    // console.log(user.name);
+                    
+                });
+                
+            }).catch((err)=>{
+                console.log("error")
+            })
+        })
+
+    </script>
+</body>
+</html>

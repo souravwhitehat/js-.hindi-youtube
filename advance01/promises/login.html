@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width:30vw;
+            height: auto;
+            
+        }
+        button{
+            margin: 20px auto;
+        }
+         #showresult {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+</style>
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">UserName</label>
+        <input type="text" id="username">
+        <label for="">password</label>
+        <input type="password" id="password">
+       
+        <span id="showresult"></span>
+    </form>
+     <button id="submit" type="button">Login</button>
+
+    <script>
+       const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+const login = document.querySelector('#submit');
+const showresult = document.querySelector('#showresult');
+
+const mypass = '123';
+const myid = 'sourav';
+
+login.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const promise = new Promise((resolve, reject) => {
+    if (mypass === password.value && myid === username.value) {
+          console.log("🟢 Inside resolve block");
+      resolve('Login successful');
+    } else {
+      reject('Enter valid email and password');
+       console.log("🔴 Inside reject block");
+    }
+  });
+
+  promise
+    .then((result) => {
+         console.log("✅ Then block running"); // debug
+      setTimeout(() => {
+        showresult.textContent = result;
+        showresult.style.color = "green";
+      }, 3000);
+    })
+    .catch((result) => {
+         console.log("❌ Catch block running"); // debug
+      setTimeout(() => {
+        showresult.textContent = result;
+        showresult.style.color = "red";
+      }, 0);
+    });
+
+  username.value = '';
+  password.value = '';
+});
+
+
+
+
+    </script>
+</body>
+</html>

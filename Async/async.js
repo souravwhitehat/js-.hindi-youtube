@@ -1,8 +1,9 @@
 // javascript ->> synchronus
 // ->>singleThread
+//  JavaScript is single-threaded and synchronous by nature,
+// but it can handle asynchronous tasks using Web APIs + Event Loop + Callback Queue.
 
-const { log } = require("async")
-
+// JavaScript itself runs one line at a time (synchronous), but things like setTimeout(), fetch(), and promises are handled by the browser (or Node.js runtime), allowing non-blocking async execution.
 
 //execution cotext 
 // execute one line at a time
