@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Quotes</h1>
+    <p id="quotes"></p>
+    <button id="get">Jokes</button>
+
+
+    <script>
+        const button = document.getElementById('get')
+        const p = document.getElementById('quotes')
+
+async function getQuotes() {
+    try {
+        p.textContent='loading.....'
+        p.style.fontSize='20px'
+        let allQuotes = await fetch("https://api.quotable.io/random")//problem in api....
+        console.log('hiii')
+        const quotes = await allQuotes.json()
+        console.log(quotes)
+      
+        
+    } catch (error) {
+        p.textContent='404 not found'
+        p.style.color='red'
+        
+    }
+}
+button.addEventListener('click' ,getQuotes);
+    </script>
+</body>
+</html>

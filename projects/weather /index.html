@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Enter City</h1>
+    <input type="text" id="cities">
+    <button id="showTemp">Show</button>
+    <p id="result"></p>
+
+
+    <script>
+        const input = document.getElementById('cities')
+        const button = document.getElementById('showTemp')
+        const p = document.getElementById('result')
+        const apiKey = "cee36121034980ce7c21ab94d7c3d599"
+
+        async function getWeatherDetails(city) {
+            try {
+                const allcitiesWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+                if (!allcitiesWeather.ok) throw new Error('city can not found')
+                const citiesWeather = await allcitiesWeather.json()
+
+                console.log("City:", citiesWeather.name);
+                console.log("Temperature:", citiesWeather.main.temp);
+                console.log("Weather:", citiesWeather.weather[0].description);
+
+                p.textContent = `📍 ${citiesWeather.name} | 🌡️ ${citiesWeather.main.temp}°C | ☁️ ${citiesWeather.weather[0].description}`;
+
+            } catch (error) {
+                console.log('can not able to show');
+
+
+            }
+
+        }
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            getWeatherDetails(input.value)
+        })
+
+    </script>
+</body>
+
+</html>
