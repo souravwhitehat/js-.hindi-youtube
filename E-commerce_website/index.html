@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Shop</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>My Shop</h1>
-    <div id="product-container">
+   <header>
+    <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+  </header>
+
+  <h1>🛍️ My Shop</h1>
+
+  <div class="container">
+    <div class="products" id="product-container"></div>
+
+    <div class="cart">
+      <h2>🛒 Cart</h2>
+      <div id="grand-total">Total: ₹0</div>
+      <div id="cart-items"></div>
     </div>
+  </div>
 
-
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
