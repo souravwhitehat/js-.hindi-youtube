@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        background: #f4f6fa;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form, .container, .container2 ,.container3{
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 24px 32px;
+        margin-bottom: 32px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    form label, .container label, .container2 label {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    form input, .container input, .container2 input, .container3 input {
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        font-size: 1rem;
+    }
+
+    form button, .container button, .container2 button , .container3 button{
+        background: #2563eb;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 0;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+    }
+
+    form button:hover, .container button:hover, .container2 button:hover, .container3 button:hover {
+        background: #1e40af;
+    }
+
+    #result, #show, #showday {
+        margin-top: 8px;
+        font-size: 1rem;
+        color: #2563eb;
+        min-height: 20px;
+    }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="username">Username</label><input type="text" id="username">
+        <label for="password">password</label><input type="text" id="password">
+        <button id="btn">Login</button>
+        <div id="result"></div>
+    </form>
+
+
+
+    <div class="container">
+        <h1>cart discount check</h1>
+        <label for="total">total</label><input type="number" id="total">
+        <button id="calbtn">calculate</button>
+        <span id="show"></span>
+    </div>
+
+    <div class="container2">
+        <label for="day">Enter Days</label><input type="text" id="inputday">
+        <button id="daybtn">Show</button>
+        <span id="showday"></span>
+    </div>
+
+    <div class="container3">
+        <h1>Check Eligiblity For vote</h1>
+        <input type="text" id="ageInput">
+        <button id="checkbtn">check</button>
+        <span id="ageresult"></span>
+    </div>
+    <script src="if_else.js"></script>
+</body>
+</html>
