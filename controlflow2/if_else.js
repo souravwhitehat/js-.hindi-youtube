@@ -117,6 +117,9 @@ checkbtn.addEventListener('click',(e)=>{
     console.log(ageInput , agebtn , ageresult);
   agebtn.addEventListener('click',(e)=>{
     e.preventDefault()
+        ageresult.textContent='checking....'
+        ageresult.style.color='black'
+
   let input4=parseInt(ageInput.value)
   if (input4<=0||input4===''||input4>100) {
         ageresult.textContent='enter a valid age'
@@ -136,3 +139,31 @@ checkbtn.addEventListener('click',(e)=>{
     ageInput.value=''
   })
     
+//today
+    const input5 = document.getElementById('num')
+    const button5 = document.getElementById('checknum')
+    const result5 = document.getElementById('numresult')
+
+  button5.addEventListener('click',(e)=>{
+    e.preventDefault()
+    const val=parseInt(input5.value)
+     result5.textContent='checking.....'
+      result5.style.color='black'
+    setTimeout(() => {
+        if (isNaN(val)) {
+            result5.textContent='please enter a valid number'
+        }
+        else{
+            if (val%2===0) {
+                result5.textContent='Even'
+                result5.style.color='green'
+            } else {
+                result5.textContent='Odd'
+                 result5.style.color='red'
+            }
+        }
+    }, 1500);
+    input5.value=''
+  })
+
+  
